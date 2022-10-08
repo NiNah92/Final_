@@ -1,0 +1,35 @@
+{
+  "name": "nv-webblog",
+  "version": "1.0.0",
+  "description": "nodejs vuejs webblog server",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thadaphongk/nv-webblog.git"
+  },
+  "author": "Thadaphong kesornpom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thadaphongk/nv-webblog/issues"
+  },
+  "homepage": "https://github.com/Thadaphongk/nv-webblog#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "sequelize": "^6.21.4",
+    "sqlite3": "^5.0.11",
+    "vue-resource": "^1.5.3",
+
+    "bcrypt-nodejs": "^0.0.3",
+    "bluebird": "^3.5.3",
+    "joi": "^13.7.0",
+    "jsonwebtoken": "^8.4.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
+
+  }
+}
