@@ -1,7 +1,9 @@
 <template>
    <div>
      <h1>Get All Users</h1>
+     <a v-on:click="logout" href="#">Logout</a>
      <div v-if="users.length">
+
        <h4>จำนวนผู้ใช้งาน {{ users.length }}</h4>
        <p>
          <button v-on:click="navigateTo('/user/create')">
@@ -26,7 +28,7 @@
          </p>
          <hr />
        </div>
-       <p><button v-on:click="logout">Logout</button></p>
+       
      </div>
    </div>
  </template>
@@ -65,13 +67,15 @@
        this.users = (await UsersService.index()).data
      },
      logout(){
-       this.$store.dispatch('setToken',null)
-       this.$store.dispatch('setUser',null)
- 
-       this.$router.push({
-         name: 'login'
-       })
-     }
+      this.$store.dispatch('setToken',null)
+      this.$store.dispatch('setUser',null)
+
+      this.$router.push({
+        name: 'login'
+      })
+    }
+  
+     
    },
  };
  </script>

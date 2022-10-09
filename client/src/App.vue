@@ -1,20 +1,33 @@
 <template>
   <div id="app">
-   <back-header />
-   <router-view/>
+    <back-header/>
+    <!-- <img src="./assets/logo.png"> -->
+    <router-view/>
   </div>
-  </template>
- <script>
- export default {
+</template>
+
+<script>
+export default {
   name: 'App'
- }
- </script>
- <style>
- #app {
+}
+</script>
+
+<style>
+#app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #09aa4a;
- }
- 
- </style>
+  /* text-align: center; */
+  color: #2c3e50;
+  margin-top: 60px;
+}
+.fade-enter, .fade-leave-to{
+  opacity: 0;
+}
+.fade-enter-active, .fade-leave-active{
+  transition: opacity 5s;
+}
+.fade-enter-to{
+  opacity: 1;
+}
+</style>
