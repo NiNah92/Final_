@@ -1,6 +1,8 @@
 <template>
     <div>
-      <h1>Create Blog</h1>
+      <div> 
+ <main-header navsel="back"></main-header></div>
+      <h1>Create product</h1>
       <form v-on:submit.prevent="createBlog">
         <p>title: <input type="text" v-model="blog.title" /></p>
         <transition name="fade">
@@ -12,9 +14,7 @@
         </transition>
         <form enctype="multipart/form-data" novalidate>
           <div class="dropbox">
-            <input
-              type="file"
-              multiple
+            <input  type="file"  multiple
               :name="uploadFieldName"
               :disabled="isSaving"
               @change="
@@ -25,14 +25,12 @@
               class="input-file"
             />
             <!-- <p v-if="isInitial || isSuccess"> -->
-            <p v-if="isInitial">
-              Drag your file(s) here to begin<br />
-              or click to browse
-            </p>
+            <p v-if="isInitial">  Drag your file(s) here to begin<br /> or click to browse </p>
             <p v-if="isSaving">Uploading {{ fileCount }} files...</p>
             <p v-if="isSuccess">Upload Successful.</p>
             <p v-if="isFailed">Upload Failed.</p>
           </div>
+          
           <div>
             <ul class="pictures">
               <li v-for="picture in pictures" v-bind:key="picture.id">
@@ -48,7 +46,7 @@
             <div class="clearfix"></div>
           </div>
         </form>
-        <p><strong>content:</strong></p>
+                <p><strong>content:</strong></p>
         <p>
           <vue-ckeditor
             v-model.lazy="blog.content"
@@ -57,13 +55,13 @@
             @focus="onFocus($event)"
           />
         </p>
-  
         <p>category: <input type="text" v-model="blog.category" /></p>
         <p>status: <input type="text" v-model="blog.status" /></p>
         <p><button type="submit">create blog</button></p>
       </form>
     </div>
   </template>
+
   <script>
   import BlogsService from "@/services/BlogsService";
   import VueCkeditor from "vue-ckeditor2";
@@ -214,15 +212,18 @@
           console.log(err);
         }
       },
+
       navigateTo(route) {
         console.log(route);
         this.$router.push(route);
       },
+
       wait(ms) {
         return (x) => {
           return new Promise((resolve) => setTimeout(() => resolve(x), ms));
         };
       },
+
       reset() {
         // reset form to initial state
         this.currentStatus = STATUS_INITIAL;
@@ -230,6 +231,7 @@
         this.uploadError = null;
         this.uploadedFileNames = [];
       },
+
       async save(formData) {
         // upload data to the server
         try {
@@ -263,6 +265,8 @@
           this.currentStatus = STATUS_FAILED;
         }
       },
+
+
       filesChange(fieldName, fileList) {
         // handle file changes
         const formData = new FormData();
@@ -275,9 +279,11 @@
         // save it
         this.save(formData);
       },
+
       clearUploadResult: function () {
         setTimeout(() => this.reset(), 5000);
       },
+
       async delFile(material) {
         let result = confirm("Want to delete?");
         if (result) {
@@ -294,10 +300,13 @@
           }
         }
       },
+
+
       useThumbnail(filename){
           console.log(filename)
           this.blog.thumbnail = filename
       }
+
     },
     created() {
       this.reset();
@@ -321,6 +330,7 @@
     },
   };
   </script>
+  
   <style scoped>
   .dropbox {
     outline: 2px dashed grey; /* the dash box */

@@ -7,7 +7,9 @@ import UserCreate from '@/components/Users/CreateUser'
 import UserEdit from '@/components/Users/EditUser'
 import UserShow from '@/components/Users/ShowUser'
 import Login from '@/components/Login'
+import FrontIndex from '@/components/Fronts/Index'
 
+import FrontShow from '@/components/Fronts/ShowBlog'
 import BlogIndex from '@/components/Blogs/Index'
 import BlogCreate from '@/components/Blogs/CreateBlog'
 import BlogEdit from '@/components/Blogs/EditBlog'
@@ -76,5 +78,16 @@ export default new Router({
       name: 'upload',
       component: Upload
     }
+    ,
+    {
+      path: '/front',
+      name: 'front',
+      component: FrontIndex
+      },
+      {
+        path: '/front/read/:blogId',
+        name: 'front-read',
+        component: FrontShow
+        },
   ]
 })

@@ -1,8 +1,9 @@
 <template>
 	<div>
-		<h1>Edit Blog</h1>
+		
+		<h1>Edit product</h1>
 		<form v-on:submit.prevent="editBlog">
-			<p>title: <input type="text" v-model="blog.title" /></p>
+			<p> title: <input type="text" v-model="blog.title" /></p>
 
 			<p><strong>content:</strong></p>
 			<p>
@@ -18,11 +19,12 @@
 			<p>status: <input type="text" v-model="blog.status" /></p>
 			<p>
 				<button type="submit">update blog</button>
-				<button v-on:click="navigateTo('/blogs')">กลับ</button>
-			</p>
+				<button v-on:click="navigateTo('/blogs')">กลับ</button></p>
 		</form>
 	</div>
 </template>
+
+
 <script>
 import BlogsService from "@/services/BlogsService";
 import VueCkeditor from 'vue-ckeditor2'

@@ -1,7 +1,11 @@
 <template>
-   <div>
-     <h1>Get All Users</h1>
-     <a v-on:click="logout" href="#">Logout</a>
+   
+    
+      <div class="container">
+  <div class="blog-header">
+ <main-header navsel="back"></main-header></div>
+     <h1> Users </h1>
+    
      <div v-if="users.length">
 
        <h4>จำนวนผู้ใช้งาน {{ users.length }}</h4>
@@ -81,3 +85,5 @@
  </script>
  <style scoped>
  </style>
+
+

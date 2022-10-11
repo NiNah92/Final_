@@ -4,17 +4,16 @@ import router from './router'
 import { sync } from 'vuex-router-sync'
 import store from './store'
 import VueResource from 'vue-resource'
-import BackHeader from '@/components/Header.vue'
-
-Vue.component('back-header', BackHeader)
+import Header from '@/components/Header.vue'
 Vue.config.productionTip = false
 Vue.use(VueResource)
+Vue.component('main-header', Header)
 sync(store, router)
 /* eslint-disable no-new */
 new Vue({
-el: '#app',
-router,
-store,
-components: { App },
-template: '<App/>'
+ el: '#app',
+ router,
+ store,
+ components: { App },
+ template: '<App/>'
 })

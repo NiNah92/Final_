@@ -1,18 +1,25 @@
 <template>
 	<div>
-		<h1>Show Blog</h1>
+		
+		<h1>Show product</h1>
 		<p>id: {{ blog.id }}</p>
-		<p>title: {{ blog.title }}</p>
-		<p>content: {{ blog.content }}</p>
+		<p>title: <input type="text" v-model="blog.title" /></p>
+		
+		
+		<div v-html="blog.content.slice(0,200) + '...'"></div> 
+  
 		<p>category: {{ blog.category }}</p>
 		<p>status: {{ blog.status }}</p>
 		<p>
+
 			<button v-on:click="navigateTo('/blog/edit/' + blog.id)">
 				แก้ไข blog
 			</button>
 			<button v-on:click="navigateTo('/blogs')">กลับ</button>
 		</p>
 	</div>
+	
+
 </template>
 <script>
 import BlogsService from "@/services/BlogsService";

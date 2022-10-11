@@ -4,6 +4,7 @@ const isAuthenController = require('./authen/isAuthenController')
 const BlogController = require('./controllers/BlogController');
 const Blog = require('./models/Blog.js');
 
+
 let multer = require("multer")
 
 // upload section
@@ -31,6 +32,7 @@ module.exports = (app) => {
     app.put('/blog/:blogId', BlogController.put)
     app.delete('/blog/:blogId', BlogController.remove)
     app.get('/blog/:blogId', BlogController.show)
+    app.get('/users/front',UserController.getFront)
     app.get('/blogs', BlogController.index)
     app.post('/upload', function (req, res) {
         upload(req, res, function (err) {

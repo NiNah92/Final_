@@ -1,5 +1,8 @@
 <template>
+    
     <div>
+        <div> 
+ <main-header navsel="back"></main-header></div>
     <h1>Create User</h1>
 
     <form v-on:submit.prevent = "createUser">
